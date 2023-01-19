@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+    <link href="static/css/button_style.css" rel="stylesheet">
+<style>
+div {
+  padding: 8px;
+}
+
+h1 {
+  font-family: 'Comic Sans MS';
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #4CAF50;
+  position: absolute;
+  top: 50px;
+  left: 30%;
+}
+
+p {
+  font-family: 'Comic Sans MS';
+  color: #6868AC;
+  text-indent: 50px;
+  text-align: justify;
+  letter-spacing: 3px;
+  position: absolute;
+  top: 12%;
+  left: 9%;
+}
+
+h3 {
+  font-family: 'Comic Sans MS';
+  color: #6868AC;
+  text-indent: 50px;
+  text-align: justify;
+  letter-spacing: 3px;
+  position: absolute;
+  top: 300px;
+  left: 15%;
+}
+</style>
+</head>
+<body>
+<div>
+  <h1>Lubisz zagadki, prawda?</h1>
+  <p><br>Wysłuchaj lub przeczytaj zagadkę,<br> a następnie postaraj się zaznaczyć poprawną odpowiedź.
+     <br><br>Pamiętaj że zawsze tylko jedna odpowiedź jest poprawna.
+     <br><br>Jeżeli będziesz mieć jakiś problem<br> zawsze możesz poprosić o pomoc kogoś starszego.</p>
+     <br><br>
+    <h3>Powodzenia!</h3>
+</div>
+<audio id="player" autoplay>
+    <source src="static/music/Instrukcja.mp3" type="audio/mp3">
+</audio>
+<div class="back">
+    <audio id="back" preload="auto"><source src="static/music/powrót.mp3"></audio>
+    <a href="/">
+        <button onmouseover="PlaySound('back')" class="noselect">Powrót</button>
+    </a>
+</div>
+</body>
+{% endblock %}

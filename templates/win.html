@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="static/css/H_name.css">
+    <link rel="stylesheet" href="static/css/arrow.css">
+</head>
+<body>
+<audio id="player" autoplay>
+    <source src="static/music/gratulacje.mp3" type="audio/mp3">
+</audio>
+<audio id="back2" preload="auto"><source src="static/music/powrot_na_poczatek.mp3"></audio>
+<h1>Gratulacje<br>wygrana jest Twoja!</h1>
+<form action="{{ url_for('index') }}" method="POST">
+    <input type="hidden" name="cls" value="1">
+    <div class="indicator" id="back1">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+   <span></span>
+</div>
+    <button onmouseover="PlaySound('back2')" id="back" class="bg-transparent border-0"><h2>Wróć na początek</h2> </button>
+</form>
+
+</body>
+{% endblock %}

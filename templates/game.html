@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+    <script>window.addEventListener('load', function () {const array = ['answer1', 'answer2', 'answer3'];
+    const shuffledArray = array.sort((a, b) => 0.5 - Math.random());
+    var elements = document.getElementsByName("answer");
+    for (var i in elements){elements[i].id=shuffledArray[i];
+    }
+    })</script>
+    <link rel="stylesheet" href="static/css/H_name.css">
+</head>
+<body>
+{% if not pytanie %}
+<h1>Gratulacje</h1>
+<form action="{{ url_for('index') }}" method="POST">
+    <input type="hidden" name="cls" value="1">
+    <button class="bg-transparent border-0"> Wróć </button>
+</form>
+{% endif %}
+<h1 id="name">{{ name }}</h1>
+<form action="#" method="post" enctype="multipart/form-data">
+    <input type="hidden" value="{{ pytanie.id }}" name="qid">
+<h2 id="query">{{ pytanie.questions }}</h2>
+    <audio id="player" autoplay><source src="{{ pytanie.audio_question }}" type="audio/mp3"></audio>
+    <button name="answer" value="1" class="bg-transparent border-0" id="answer1" onclick="PlaySound('right')"><img src="{{ pytanie.correct }}" width="128" ></button>
+    <button name="answer" value="2" class="bg-transparent border-0" id="answer2" onclick="PlaySound('bad')"> <img src="{{ pytanie.incorrect1 }}" width="128" ></button>
+    <button name="answer" value="2" class="bg-transparent border-0" id="answer3" onclick="PlaySound('bad')"> <img src="{{ pytanie.incorrect2 }}" width="128" ></button>
+</form>
+</body>
+{% endblock %}

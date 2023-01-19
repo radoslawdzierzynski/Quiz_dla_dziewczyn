@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/make_questions.css">
+    <link rel="stylesheet" href="static/css/message.css">
+    <link rel="stylesheet" href="static/css/radio.css">
+ <div class="typewriter" >
+    <h3>{% with messages = get_flashed_messages() %}
+       {% if messages %}
+         <ul class="flashes">
+            {% for message in messages %}
+             <div class="message_flash">{{ message }}</div>
+            {% endfor %}
+        </ul>
+      {% endif %}
+     {% endwith %}
+    </h3>
+    </div>
+</head>
+<body>
+<div class="login-box">
+  <form action="#" enctype="multipart/form-data" method="post" novalidate action="{{ url_for('make_questions')}}">
+      <p1>Wskaż kategorie wiekową pytania</p1>
+      <div class="wrapper">
+          <input type="radio" name="select" value="1" id="option-1" checked>
+          <input type="radio" name="select" value="2" id="option-2">
+          <label for="option-1" class="option option-1">
+              <div class="dot"></div>
+              <span>1-4</span>
+          </label>
+          <label for="option-2" class="option option-2">
+              <div class="dot"></div>
+              <span>4-7</span>
+          </label>
+      </div>
+      <div class="user-box">
+          <input type="text" name="question" maxlength="150" required="">
+          <label>Tutaj wpisz swoje pytanie</label>
+      </div>
+      <p style="color:white;" >Pierwszy wgrany plik jest poprawną odpowiedzią!!!</p>
+      <div class="user-box">
+          <input type="file" accept="image/*" name="correct" required="">
+          <label></label>
+      </div>
+      <div class="user-box">
+          <input type="file" accept="image/*" name="incorrect1" required="">
+          <label></label>
+      </div>
+      <div class="user-box">
+          <input type="file" accept="image/*" name="incorrect2" required="">
+          <label></label>
+      </div>
+      <a1>
+          <button onmouseover="PlaySound('add')" type="submit" class="bg-transparent"></button>
+          <audio id="add" preload="auto"><source src="static/music/dodaj_pytanie.mp3"></audio>
+      </a1>
+      <a href="/" onmouseover="PlaySound('back')">
+          <audio id="back" preload="auto"><source src="static/music/powrót.mp3"></audio>
+      </a>
+  </form>
+</div>
+</body>
+{% endblock %}

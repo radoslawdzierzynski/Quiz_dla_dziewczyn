@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+    <link href="static/css/button_style.css" rel="stylesheet">
+</head>
+<body>
+ <div class="title">QUIZ<br> Przedszkolaka</div>
+ <div class="absolute"><img src="static/images/cat-133_256.gif" width="128" height="128" ></div>
+ <div class="play">
+     <a href="/name_age">
+     <button onmouseover="PlaySound('play')"
+             class="noselect">Zagraj</button>
+     </a>
+ </div>
+ <div class="instruction">
+     <a href="/instruction">
+         <button onmouseover="PlaySound('instruction')"
+                 class="noselect">Instrukcja</button>
+     </a>
+ </div>
+ <div class="make_ask" >
+  <a class="effect1" onmouseover="PlaySound('create_question')" href="/make_questions">
+    Utwórz pytanie
+    <span class="bg"></span>
+  </a>
+ </div>
+</body>
+</html>
+{% endblock %}

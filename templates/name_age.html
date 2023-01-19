@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="static/css/name_age.css">
+    <div class="typewriter" >
+    <h3>{% with messages = get_flashed_messages() %}
+       {% if messages %}
+         <ul class="flashes">
+            {% for message in messages %}
+             <div class="message_flash">{{ message }}</div>
+            {% endfor %}
+        </ul>
+      {% endif %}
+     {% endwith %}
+    </h3>
+    </div>
+</head>
+<body>
+<iframe src="static/music/1-second-of-silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+<audio id="player" autoplay>
+    <source src="static/music/Witaj_-pora-się-pozn.mp3" type="audio/mp3">
+</audio>
+<audio id="name5" preload="auto"><source src="static/music/Tutaj_wpisz_swoje_imie.mp3"></audio>
+<audio id="age" preload="auto"><source src="static/music/Tutaj_wpisz_ile_masz_lat.mp3"></audio>
+<div class="contact-us" class="position-absolute top-0 start-0 translate-middle">
+  <form action="#" method="post"  novalidate action="{{ url_for('name_age')}}">
+    <H3>Poznajmy się</H3>
+    <input name="name"
+           placeholder="Tutaj wpisz swoje imię"
+           onmouseover="PlaySound('name5')"
+           onmouseout="StopSound('name5')"
+           required="" type="text" maxlength="20">
+      <input name="old"
+             onmouseover="PlaySound('age')"
+             onmouseout="StopSound('age')"
+             placeholder="Tutaj wpisz ile masz lat" type="number" min="1">
+      <button type="submit" onmouseover="PlaySound('play')">GRAMY!</button>
+  </form>
+<div class="gabby"><img src="static/images/gabby.gif" width="320" height="320">
+</div>
+</div>
+</body>
+{% endblock %}

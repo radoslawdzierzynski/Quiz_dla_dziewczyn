@@ -1,0 +1,42 @@
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+
+body {
+  font-family: "Indie Flower", cursive;
+  letter-spacing: 0.1rem;
+  color: #111;
+  padding: 2.2rem 0 0 5rem;
+  white-space: nowrap;
+
+  /* Initialize Counter */
+  counter-reset: listCounter;
+}
+
+h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  border-bottom: 2px solid #111;
+}
+
+.continuous-list {
+  font-size: 1.8rem;
+  font-weight: 400;
+  padding-left: 0.5rem;
+  margin-bottom: 2.8rem;
+}
+
+.continuous-list li {
+  margin-bottom: 0.6rem;
+}
+
+.continuous-list li::before {
+  content: counter(listCounter) ". ";
+  counter-increment: listCounter;
+}

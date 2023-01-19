@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz dla Hani i Lusi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/background.css">
+    <link rel="stylesheet" href="static/css/position.css">
+    <link rel="stylesheet" href="static/css/title.css">
+    <link rel="stylesheet" href="static/css/mute_button.css">
+    <link rel="stylesheet" href="static/css/create_button.css">
+    <link href="https://texttospeech.googleapis.com/v1beta1/text:synthesize">
+    <style> body { width: 100%;
+      background-image: url("static/images/05sa_ldnn_210617.jpg");
+      background-color: #cccccc; height: 500px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      } </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/mouse_hover.js"></script>
+    <script src="static/js/mute.js"></script>
+    <audio id="play" preload="auto"><source src="static/music/Zagraj.mp3"></audio>
+    <audio id="instruction" preload="auto"><source src="static/music/instrukcja_button.mp3"></audio>
+    <audio id="create_question" preload="auto"><source src="static/music/Utwórz_pytanie.mp3"></audio>
+    <audio id="right" preload="auto"><source src="static/music/dobrze.mp3"></audio>
+    <audio id="bad" preload="auto"><source src="static/music/zle.mp3"></audio>
+    <iframe src="static/music/1-second-of-silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+    <audio id="myAudio" loop autoplay>
+        <source src="static/music/silent-evening-114924.mp3" autoplay type='audio/mpeg'>
+            Your user agent does not support the HTML5 Audio element.
+    </audio>
+    <script src="static/js/volume_0.5.js"></script>
+</head>
+<body>
+{% block content %}
+
+{% endblock %}
+</body>
+</html>
